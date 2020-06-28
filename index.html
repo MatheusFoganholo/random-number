@@ -3,59 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerador de Número Aleatório - Generate a Random Number</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <style>
-        label {
-            display: block;
-            margin-top: 20px;
-            margin-bottom: 5px;
-        }
-
-        #button {
-            display: block;
-            margin-top: 20px;
-        }
-
-        #numberGenerated {
-            display: block;
-            margin-top: 20px;
-        }
-    </style>
-
-    <h1>Gerador de número aleatório</h1>
-        <label for="minNumber">Número Mínimo:</label>
-        <input type="number" id="minNumber" name="minNumber" value="" pattern="[0-9]">
-        <label for="maxNumber">Número Máximo: </label>
-        <input type="number" id="maxNumber" name="maxNumber" value="" pattern="[0-9]">
-        <input id="button" type="submit" value="Gerar Número">
-        <span id="numberGenerated"></span>
-        <span id="invalidNumber"></span>
-
-    <script>
-
-        const minNumber = document.getElementById('minNumber');
-        const maxNumber = document.getElementById('maxNumber');
-        const button = document.getElementById('button');
-        const numberGenerated = document.getElementById('numberGenerated');
-        const invalidNumber = document.getElementById('invalidNumber')
-
-        function generateRandomNumber() {
-            minNumberValue = +minNumber.value;
-            maxNumberValue = +maxNumber.value;
-            if(minNumberValue <= maxNumberValue) {
-                let randonNumber = Math.floor(Math.random() * (maxNumberValue - minNumberValue + 1)) + minNumberValue;
-                numberGenerated.innerText = `Número Gerado: ${randonNumber}`;
-                invalidNumber.innerText = ``;
-            } else {
-                maxNumber.value = minNumberValue + 1;
-                generateRandomNumber();
-                invalidNumber.innerText = `Você digitou um número mínimo maior do que o número máximo, então substituimos o número máximo por ${minNumberValue + 1}.`;
-            }
-        };
-
-        button.addEventListener('click', generateRandomNumber);
-    </script>
+    <section id="container">
+        <h1>Generate<br/>Random Number</h1>
+        <main>
+            <img src="img/random-numbers.png" alt="Random Numbers">
+            <label for="minNumber">Número Mínimo:</label>
+            <input type="number" id="minNumber" name="minNumber" value="" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <label for="maxNumber">Número Máximo:</label>
+            <input type="number" id="maxNumber" name="maxNumber" value="" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input id="button" type="submit" value="Gerar Número">
+            <span id="numberGenerated"></span>
+            <span id="invalidNumber"></span>
+        </main>
+    </section><!--container-->
+    <script src="js/script.js"></script>
 </body>
 </html>
