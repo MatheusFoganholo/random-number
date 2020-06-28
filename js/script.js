@@ -8,6 +8,7 @@ function generateRandomNumber() {
     const maxNumber = document.getElementById('maxNumber');
     const numberGenerated = document.getElementById('numberGenerated');
     const invalidNumber = document.getElementById('invalidNumber')
+    const container = document.getElementById('container');
 
     // Picking The Number Inputed By User and Converting The String Value To Number
     let minNumberValue = +minNumber.value;
@@ -24,8 +25,7 @@ function generateRandomNumber() {
     } else {
         maxNumber.value = minNumberValue + 1;
         generateRandomNumber();
-        invalidNumber.innerText = `Você digitou um número mínimo maior do que o número máximo, então substituimos o número máximo por ${minNumberValue + 1}.`;
-        invalidNumber.style.marginTop = '20px';
+        alert(`Você digitou um número mínimo maior do que o número máximo, então substituimos o número máximo por ${minNumberValue + 1}.`);
     };
 };
 

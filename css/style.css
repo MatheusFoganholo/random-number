@@ -109,9 +109,9 @@ input[type="number"]:focus {
 }
 
 /* Responsivity */
-@media (max-width: 700px) {
+@media (max-height: 550px) {
     #container {
-        height: 100%;
-        margin-top: 40px;
+        height: auto;
+        margin-top: 30px;
     }
 }
