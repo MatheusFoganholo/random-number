@@ -1,14 +1,17 @@
+// Selecting The Button and Adding Event to Generate a Random Number
 const button = document.getElementById('button');
 button.addEventListener('click', generateRandomNumber);
 
+// Function
 function generateRandomNumber() {
     const minNumber = document.getElementById('minNumber');
     const maxNumber = document.getElementById('maxNumber');
     const numberGenerated = document.getElementById('numberGenerated');
     const invalidNumber = document.getElementById('invalidNumber')
 
-    minNumberValue = +minNumber.value;
-    maxNumberValue = +maxNumber.value;
+    // Picking The Number Inputed By User and Converting The String Value To Number
+    let minNumberValue = +minNumber.value;
+    let maxNumberValue = +maxNumber.value;
 
     if(minNumber.value === '') {
         alert('Digite um número mínimo!');
